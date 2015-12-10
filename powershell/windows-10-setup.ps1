@@ -1,17 +1,6 @@
 
-#Enable Script Execution
-#Set-ExecutionPolicy Unrestricted -force
-#create a profile & add the HelpeerFunctions module to powershell
-$moduleDir = "$home\Documents\WindowsPowerShell\Modules\HelperFunctions"
-mkdir $moduleDir
-cp .\HelperFunctions.psm1 $moduleDir
+./powershell-setup.ps1
 
-add-content $home\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1 '$env:PSModulePath = $env:PSModulePath'
-
-.$PROFILE
-
-#Enable Script Execution
-#Set-ExecutionPolicy Unrestricted
 #enable remote desktop
 Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server' -Name fDenyTSConnections -Value 0
 Set-NetFirewallRule -DisplayGroup 'Remote Desktop' -Enabled True
@@ -63,3 +52,7 @@ iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.p
 
 #disable UAC
 Set-UACStatus -enabled $false
+ 
+ 
+ 
+ 
