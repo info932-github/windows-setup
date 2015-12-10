@@ -26,5 +26,5 @@ For use after initial windows installation.
 5. After reboot, run:
 
 	~~~powershell
-	c:\> .\
+	c:\> .\dev-setup.ps1
 	~~~
